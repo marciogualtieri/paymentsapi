@@ -148,4 +148,4 @@ For my own future reference, [here](https://github.com/smartystreets/goconvey/wi
 
 ### GORM
 
-For my own future reference, [here](http://gorm.io/docs/connecting_to_the_database.html) a list of supported databases and correspondent configuration info.
+For my own future reference, [here](http://gorm.io/docs/connecting_to_the_database.html) is a list of supported databases and correspondent configuration info.
