@@ -1,0 +1,81 @@
+@startuml
+
+note top of PaymentRepository
+This interface establishes a
+dependency inversion between
+the app and the repository.
+end note
+interface PaymentRepository {
+  +Create(payment models.Payment) (*string, error)
+	+Read(id string) (*models.Payment, error)
+	+Update(payment models.Payment) error
+	+Delete(id string) error
+	+ReadAll() ([]models.Payment, error)
+	+Close()
+}
+
+note top of JSONSerializer
+This interface establishes a
+dependency inversion between
+the app and the serializer.
+end note
+interface JSONSerializer {
+	+ParsePayment(paymentJSON string) (*models.Payment, error)
+	+ParsePayments(paymentJSON string) ([]models.Payment, error)
+	+PaymentsToString(payments []models.Payment) string
+	+PaymentToString(payment models.Payment) string
+}
+
+note top of Controller
+This interface establishes a
+dependency inversion between
+the app and the controller.
+end note
+interface Controller {
+	+Run()
+}
+
+
+class Configuration {
+	+RequestsLogFile   string
+	+ErrorsLogFile     string
+	+RepositoryLogFile string
+	+BaseResource      string
+	+SqliteFile        string
+	+SqliteLogMode     bool
+}
+
+note top of SqlitePaymentRepository
+The sqlite repository
+has been implemented
+with the GORM Framework.
+end note
+class SqlitePaymentRepository
+
+note top of DefaultJSONSerializer
+The JSON serializer
+has been implemented
+with the standard
+Go library.
+end note
+class DefaultJSONSerializer
+
+note top of GinController
+This controller has been
+implemented with the
+Gin Framework.
+end note
+class GinController
+
+PaymentRepository <-- SqlitePaymentRepository
+JSONSerializer <-- DefaultJSONSerializer
+Controller <-- GinController
+
+Controller *- PaymentRepository
+Controller *-- JSONSerializer
+
+SqlitePaymentRepository *-- Configuration
+DefaultJSONSerializer *-- Configuration
+GinController *-- Configuration
+
+@enduml
