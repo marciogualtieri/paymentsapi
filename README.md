@@ -59,7 +59,7 @@ Here's a list of web resources for all external dependencies:
 The app is can be configured through properties files:
 
 - [`./resources/configuration.properties`](./resources/configuration.properties) for production.
-- [`./testing/resources/configuration.properties`](./resources/configuration.properties) for tests.
+- [`./testing/resources/configuration.properties`](./testing/resources/configuration.properties) for tests.
 
 The following parameters are supported at the moment:
 
