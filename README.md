@@ -116,7 +116,7 @@ You may also generate HTML reports by executing the following command:
 
     $GOPATH/bin/goconvey
 
-The command will start a web server and open your browser with the url [http://127.0.0.1:8080/](http://127.0.0.1:8080/):
+The command will start a web server on the url [`localhost:8080`](http://localhost:8080/) and open it with your default browser:
 
 ![](./images/running_tests.gif)
 
