@@ -26,7 +26,7 @@ The full set of features can be found in [these requirements](./requirements/For
 
 ## Design
 
-The app follows a standard MVC architecture. The controller has been implemented with the [Gin Web Framework](https://github.com/gin-gonic/gin), the model with the [GORM library](http://doc.gorm.io) (model), and the view (JSON serializer) with Go's standard library.
+The app follows a standard MVC architecture. The controller has been implemented with the [Gin Web Framework](https://github.com/gin-gonic/gin), the model with the [GORM library](http://doc.gorm.io), and the view (JSON serializer) with Go's standard library.
 
 ![](./images/app_class_diagram.png)
 
